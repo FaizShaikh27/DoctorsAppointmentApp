@@ -17,6 +17,8 @@ public class MainActivity extends AppCompatActivity {
     private MainViewModel viewModel;
 
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,6 +26,11 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         viewModel = new MainViewModel();
         setContentView(binding.getRoot());
+
+        String name = getIntent().getStringExtra("name");
+        if (name != null) {
+            binding.textView.setText("Hi " + name);
+        }
 
         initCategory();
         initTopDoctors();

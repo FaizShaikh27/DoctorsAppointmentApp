@@ -265,7 +265,7 @@
                         android:paddingEnd="8dp" />
 
                     <androidx.appcompat.widget.AppCompatButton
-                        android:id="@+id/button2"
+                        android:id="@+id/actionBook"
                         android:layout_width="match_parent"
                         android:background="@drawable/blue_btn_bg"
                         android:textStyle="bold"

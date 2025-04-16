@@ -2,6 +2,8 @@ package com.example.appointmentapp.Activity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,6 +13,7 @@ import com.bumptech.glide.Glide;
 import com.example.appointmentapp.Adapter.DateAdapter;
 import com.example.appointmentapp.Adapter.TimeAdapter;
 import com.example.appointmentapp.Domain.DoctorsModel;
+import com.example.appointmentapp.R;
 import com.example.appointmentapp.databinding.ActivityDetailBinding;
 
 import java.time.LocalDate;
@@ -22,6 +25,8 @@ import java.util.List;
 public class DetailActivity extends AppCompatActivity {
     private ActivityDetailBinding binding;
     private DoctorsModel item;
+
+    Button book;
 
 
     @Override
@@ -36,6 +41,15 @@ public class DetailActivity extends AppCompatActivity {
         setVariable();
         InitDate();
         InitTime();
+
+        book = findViewById(R.id.actionBook);
+
+        book.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(DetailActivity.this, "Appointment Booked", Toast.LENGTH_LONG).show();
+            }
+        });
     }
 
     private void InitTime() {
