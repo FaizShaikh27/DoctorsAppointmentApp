@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "196604731548",
+    "project_id": "appointmentapp-c8288",
+    "storage_bucket": "appointmentapp-c8288.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:196604731548:android:08fcece76edcb635768d59",
+        "android_client_info": {
+          "package_name": "com.example.appointmentapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCcWzURNaVVzfcYV72eYHq4NZanZOQ8gqQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
