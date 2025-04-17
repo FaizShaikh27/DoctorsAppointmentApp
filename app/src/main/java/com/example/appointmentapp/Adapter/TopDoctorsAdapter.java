@@ -22,8 +22,13 @@ public class TopDoctorsAdapter extends RecyclerView.Adapter<TopDoctorsAdapter.Vi
     private final List<DoctorsModel> items;
     private Context context;
 
-    public TopDoctorsAdapter(List<DoctorsModel> items) {
+    private final String userName;    // ← user’s name
+
+
+
+    public TopDoctorsAdapter(List<DoctorsModel> items, String userName) {
         this.items = items;
+        this.userName = userName;
     }
 
     @NonNull
@@ -48,11 +53,16 @@ public class TopDoctorsAdapter extends RecyclerView.Adapter<TopDoctorsAdapter.Vi
 
         Glide.with(holder.itemView.getContext()).load(doctorsModel.getPicture()).apply(new RequestOptions().transform(new CenterCrop())).into(holder.binding.img);
 
+
+
         holder.binding.getRoot().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(context, DetailActivity.class);
                 intent.putExtra("object", doctorsModel);
+                intent.putExtra("userName", userName);
+                // (optional) also pass the doctor’s name explicitly
+                intent.putExtra("doctorName", doctorsModel.getName());
                 context.startActivity(intent);
             }
         });
